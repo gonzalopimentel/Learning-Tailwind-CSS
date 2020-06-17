@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LandPage</title>
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <nav
+      x-data="{ open: false }"
+      class="fixed z-10 w-full bg-secondary text-gray-100"
+    >
+      <!--Header-->
+      <header
+        class="px-2 bg-secondary text-white flex justify-between items-center"
+      >
+        <div>
+          <img class="h-8 py-1" src="./public/images/logo-w.svg" alt="" />
+        </div>
+        <div class="text-2xl cursor-pointer" @click="open = true">&equiv;</div>
+      </header>
+      <div x-show="open" @click.away="open = false">
+        <!--Navbar-->
+        <div class="my-1 mx-2">
+          <input
+            class="form-control"
+            type="search"
+            placeholder="&#9757; Búsqueda"
+          />
+        </div>
+        <div class="py-1 mx-2 md:flex justify-around">
+          <div class="flex">
+            Precio:
+            <div class="ml-2">$</div>
+            <div class="ml-2 text-primary">$$</div>
+            <div class="ml-2">$$$</div>
+            <div class="ml-2">$$$$</div>
+          </div>
+          <div class="flex">
+            <div class="">Calificación</div>
+            <div class="ml-2 text-primary">&starf;</div>
+            <div class="ml-px text-primary">&starf;</div>
+            <div class="ml-px text-primary">&starf;</div>
+            <div class="ml-px text-primary">&starf;</div>
+            <div class="ml-px">&star;</div>
+          </div>
+          <div>
+            <button class="btn btn-primary">Filtrar</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--Main-->
+    <main class="mb-8">
+      <!--Banner-->
+      <div
+        class="h-56 md:h-100 md:bg-center bg-no-repeat bg-cover bg-bottom"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80');
+        "
+      ></div>
+      <!--Cards-->
+      <div class="container mx-auto md:flex">
+        <!--Card 1-->
+        <div class="mx-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
+          <div>
+            <img
+              class="w-full md:h-full object-cover object-left md:w-48 rounded-lg md:rounded-r-none"
+              src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=500&q=80"
+              alt=""
+            />
+          </div>
+          <div
+            class="relative mx-2 p-2 shadow-lg md:shadow-none bg-white md:bg-transparent rounded-lg -mt-3"
+          >
+            <h2
+              class="md:text-lg text-xl tracking-tight font-semibold uppercase text-gray-900"
+            >
+              Cheese Burguer
+            </h2>
+            <p class="text-gray-700 leading-snug">
+              Burguer with extra cheese and chipotle sauce.
+            </p>
+            <div class="mt-2 text-sm font-semibold text-gray-700">$15.99</div>
+            <div class="mt-2 text-sm text-yellow-700">
+              &starf;&starf;&starf;&starf;&star; / 36 reseñas
+            </div>
+          </div>
+        </div>
+        <!--Card 2-->
+        <div
+          class="mx-2 md:ml-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg"
+        >
+          <div>
+            <img
+              class="w-full md:h-full object-cover object-left md:w-48 rounded-lg md:rounded-r-none"
+              src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=500&q=80"
+              alt=""
+            />
+          </div>
+          <div
+            class="relative mx-2 p-2 shadow-lg md:shadow-none bg-white md:bg-transparent rounded-lg -mt-3"
+          >
+            <h2
+              class="md:text-lg text-xl tracking-tight font-semibold uppercase text-gray-900"
+            >
+              Cheese Burguer
+            </h2>
+            <p class="text-gray-700 leading-snug">
+              Burguer with extra cheese and chipotle sauce.
+            </p>
+            <div class="mt-2 text-sm font-semibold text-gray-700">$15.99</div>
+            <div class="mt-2 text-sm text-yellow-700">
+              &starf;&starf;&starf;&starf;&star; / 36 reseñas
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Forms-->
+      <section class="container mx-auto mt-4 mx-2">
+        <div>
+          <div>Nombre</div>
+          <input class="form-control" type="text" placeholder="Nombre" />
+        </div>
+        <div>
+          <div>Email</div>
+          <input class="form-control" type="email" placeholder="Email" />
+        </div>
+        <div>
+          <div>Comentarios</div>
+          <textarea
+            class="form-control"
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+        <div>
+          <button class="btn btn-primary mx-auto">
+            Enviar
+          </button>
+        </div>
+      </section>
+    </main>
+    <!--Footer-->
+    <footer class="w-full bg-secondary text-white">
+      <div class="md:flex md:flex-row-reverse justify-around">
+        <div class="mt-4 ml-8">
+          <div class="hover:text-blue-600 cursor-pointer">
+            <i class="fa fa-facebook"></i> Gonzalo Pimentel
+          </div>
+          <div class="hover:text-blue-400 cursor-pointer">
+            <i class="fa fa-twitter"></i> zalopimentel09
+          </div>
+          <div class="hover:text-orange-600 cursor-pointer">
+            <i class="fa fa-instagram"></i> zalopr9
+          </div>
+        </div>
+        <ul class="mt-4 mb-4 ml-8 md:list-disc">
+          <li class="cursor-pointer">Soporte</li>
+          <li class="cursor-pointer">Acerca de nosotros</li>
+          <li class="cursor-pointer">Registro</li>
+          <li class="cursor-pointer">Aviso de Privacidad</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
